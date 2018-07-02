@@ -1,0 +1,47 @@
+﻿@model IEnumerable<VMS_Project.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleTypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleMakeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VehicleModelId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleTypeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleMakeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VehicleModelId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
